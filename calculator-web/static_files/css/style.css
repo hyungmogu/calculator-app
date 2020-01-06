@@ -19,7 +19,7 @@
 
 .calculator {
   border: 1px solid black;
-  width: 24rem; }
+  max-width: 24rem; }
 
 .display {
   height: 5rem;
