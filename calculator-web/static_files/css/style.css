@@ -1,8 +1,11 @@
 .btn {
-  width: 25%;
-  height: 20%; }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(25% - 2px);
+  height: calc(20% - 2px); }
   .btn.btn--clear {
-    width: 75%; }
+    width: calc(75% - 2px); }
 
 .display {
   height: 6rem; }
