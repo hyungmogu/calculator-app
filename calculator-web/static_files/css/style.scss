@@ -9,6 +9,7 @@
     width: calc(25% - 2px);
     height: calc(20% - 2px);
     border: 1px solid black;
+    user-select: none;
 
     &:hover {
         cursor: pointer;
