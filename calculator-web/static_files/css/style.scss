@@ -4,19 +4,26 @@
     justify-content: center;
     width: calc(25% - 2px);
     height: calc(20% - 2px);
+    border: 1px solid black;
+    // margin:-1px 0 0 -1px;
 
     &.btn--clear {
         width: calc(75% - 2px);
     }
 }
 
+.calculator {
+    border: 1px solid black;
+    width: 24rem;
+}
+
 .display {
-    height: 6rem;
+    height: 5rem;
+    border: 1px solid black;
 }
 
 .number-pad {
     display: flex;
     flex-wrap: wrap;
-    width: 24rem;
     height: 30rem;
 }
