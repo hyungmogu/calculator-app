@@ -9,7 +9,15 @@
     width: calc(25% - 2px);
     height: calc(20% - 2px);
     border: 1px solid black;
-    // margin:-1px 0 0 -1px;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        color: white;
+        background-color: black;
+    }
 
     &.btn--clear {
         width: calc(75% - 2px);

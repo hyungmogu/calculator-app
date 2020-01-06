@@ -8,6 +8,11 @@
   width: calc(25% - 2px);
   height: calc(20% - 2px);
   border: 1px solid black; }
+  .btn:hover {
+    cursor: pointer; }
+  .btn:active {
+    color: white;
+    background-color: black; }
   .btn.btn--clear {
     width: calc(75% - 2px); }
 
