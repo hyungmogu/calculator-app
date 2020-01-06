@@ -20,6 +20,13 @@
 .display {
     height: 5rem;
     border: 1px solid black;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    padding: 0 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .number-pad {
