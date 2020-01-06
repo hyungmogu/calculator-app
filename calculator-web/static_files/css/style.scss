@@ -1,13 +1,19 @@
 .btn {
     width: 25%;
-    height: 25%;
+    height: 20%;
 
     &.btn--clear {
         width: 75%;
     }
 }
 
+.display {
+    height: 6rem;
+}
+
 .number-pad {
     display: flex;
     flex-wrap: wrap;
+    width: 24rem;
+    height: 30rem;
 }
