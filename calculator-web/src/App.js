@@ -133,9 +133,9 @@ class App extends Component {
                   <div className="btn btn--number-5" onClick={ () => this.addNumber('5')}>5</div>
                   <div className="btn btn--number-6" onClick={ () => this.addNumber('6')}>6</div>
                   <div className="btn btn--operand-division" onClick={ () => this.addOperator('/')}>÷</div>
-                  <div className="btn btn--number-1" onClick={ () => this.addNumber('7')}>7</div>
-                  <div className="btn btn--number-2" onClick={ () => this.addNumber('8')}>8</div>
-                  <div className="btn btn--number-3" onClick={ () => this.addNumber('9')}>9</div>
+                  <div className="btn btn--number-1" onClick={ () => this.addNumber('1')}>1</div>
+                  <div className="btn btn--number-2" onClick={ () => this.addNumber('2')}>2</div>
+                  <div className="btn btn--number-3" onClick={ () => this.addNumber('3')}>3</div>
                   <div className="btn btn--operand-product" onClick={ () => this.addOperator('*')}>x</div>
                   <div className="btn btn--sign" onClick={ () => this.toggleSign()}>+/-</div>
                   <div className="btn btn--decimal" onClick={ () => this.addDecimal()}>.</div>
