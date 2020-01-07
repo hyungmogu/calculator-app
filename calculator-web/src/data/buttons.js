@@ -1,4 +1,4 @@
-export const CalculatorButtons = [
+const CalculatorButtonsList = [
     {
         id: "button-clear",
         type: "clear",
@@ -77,7 +77,7 @@ export const CalculatorButtons = [
         value: "3"
     },
     {
-        id: "button-multiplication",
+        id: "button-product",
         type: "operator",
         label: "x",
         value: "*"
@@ -104,3 +104,6 @@ export const CalculatorButtons = [
         label: "="
     }
 ];
+
+
+export default CalculatorButtonsList;

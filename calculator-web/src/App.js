@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+
 import logo from './logo.svg';
 import './App.css';
+
+import CalculatorButtonsList from './data/buttons';
 
 class App extends Component {
 
@@ -140,6 +143,70 @@ class App extends Component {
 
   render() {
     let display = this.state.display;
+    let buttons = CalculatorButtonsList.map( button => {
+
+      if (button.type === 'operator') {
+        return (
+          <div
+            key={button.id}
+            className={`btn btn--operator`}
+            onClick={ () => this.addOperator(button.value)}
+          >
+            {button.label}
+          </div>
+        );
+      } else if (button.type === 'decimal') {
+        return (
+          <div
+            key={button.id}
+            className={`btn btn--decimal`}
+            onClick={ () => this.addDecimal()}
+          >
+            {button.label}
+          </div>
+        );
+      } else if (button.type === 'sign') {
+        return (
+          <div
+            key={button.id}
+            className={`btn btn--sign`}
+            onClick={ () => this.toggleSign()}
+          >
+            {button.label}
+          </div>
+        );
+      } else if (button.type === 'calculate') {
+        return (
+          <div
+            key={button.id}
+            className={`btn btn--calculate`}
+            onClick={ () => this.calculate()}
+          >
+            {button.label}
+          </div>
+        );
+      } else if (button.type === 'clear') {
+        return (
+          <div
+            key={button.id}
+            className={`btn btn--clear`}
+            onClick={ () => this.clear()}
+          >
+            {button.label}
+          </div>
+        );
+      }
+
+      return (
+        <div
+          key={button.id}
+          className={`btn btn--number`}
+          onClick={ () => this.addNumber(button.value)}
+        >
+          {button.label}
+        </div>
+      );
+    });
 
     return (
       <div className="App">
@@ -147,24 +214,7 @@ class App extends Component {
             <div className="calculator">
               <section className="display">{display}</section>
               <section className="number-pad">
-                  <div className="btn btn--clear" onClick={ () => this.clear()}>Clear</div>
-                  <div className="btn btn--operand-plus" onClick={ () => this.addOperator('+')}>+</div>
-                  <div className="btn btn--number-7" onClick={ () => this.addNumber('7')}>7</div>
-                  <div className="btn btn--number-8" onClick={ () => this.addNumber('8')}>8</div>
-                  <div className="btn btn--number-9" onClick={ () => this.addNumber('9')}>9</div>
-                  <div className="btn btn--operand-minus" onClick={ () => this.addOperator('-')}>-</div>
-                  <div className="btn btn--number-4" onClick={ () => this.addNumber('4')}>4</div>
-                  <div className="btn btn--number-5" onClick={ () => this.addNumber('5')}>5</div>
-                  <div className="btn btn--number-6" onClick={ () => this.addNumber('6')}>6</div>
-                  <div className="btn btn--operand-division" onClick={ () => this.addOperator('/')}>÷</div>
-                  <div className="btn btn--number-1" onClick={ () => this.addNumber('1')}>1</div>
-                  <div className="btn btn--number-2" onClick={ () => this.addNumber('2')}>2</div>
-                  <div className="btn btn--number-3" onClick={ () => this.addNumber('3')}>3</div>
-                  <div className="btn btn--operand-product" onClick={ () => this.addOperator('*')}>x</div>
-                  <div className="btn btn--sign" onClick={ () => this.toggleSign()}>+/-</div>
-                  <div className="btn btn--decimal" onClick={ () => this.addDecimal()}>.</div>
-                  <div className="btn btn--number-0" onClick={ () => this.addNumber('0')}>0</div>
-                  <div className="btn btn--operand-equal" onClick={ () => this.calculate()}>=</div>
+                  {buttons}
               </section>
           </div>
         </main>
