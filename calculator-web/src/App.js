@@ -42,7 +42,7 @@ class App extends Component {
 
       return {
         display: prevState.display + value,
-        currentNumber: prevState.display + value
+        currentNumber: prevState.currentNumber + value
       }
     });
   }
