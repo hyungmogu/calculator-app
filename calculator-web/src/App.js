@@ -13,6 +13,10 @@ class App extends Component {
     let decimal = '.';
 
     this.setState( prevState => {
+      if (prevState.lock) {
+        return null;
+      }
+
       if (prevState.currentNumber.includes(decimal)) {
         return null;
       }
@@ -33,6 +37,11 @@ class App extends Component {
 
   addNumber = (value) => {
     this.setState( prevState => {
+
+      if (prevState.lock) {
+        return null;
+      }
+
       if (prevState.display === '0') {
         return {
           display: value,
@@ -52,6 +61,10 @@ class App extends Component {
       let secondLastDigit = prevState.display[prevState.display.length - 2];
       let operators = ['+', '-', '/', '*'];
 
+      if (prevState.lock) {
+        return null;
+      }
+
       if (operators.includes(secondLastDigit)) {
         return {
           display: `${prevState.display.slice(0, -3)} ${value} `,
@@ -69,6 +82,11 @@ class App extends Component {
   calculate = () => {
     this.setState( prevState => {
       let newNumber;
+
+      if (prevState.lock) {
+        return null;
+      }
+
       try {
         newNumber = `${eval(prevState.display)}`;
       } catch (Error) {
@@ -95,12 +113,18 @@ class App extends Component {
   clear = () => {
     this.setState({
       display: '0',
-      currentNumber: '0'
+      currentNumber: '0',
+      lock: false
     })
   }
 
   toggleSign = () => {
     this.setState( prevState => {
+
+      if (prevState.lock) {
+        return null;
+      }
+
       if (prevState.currentNumber === '0') {
         return null;
       }
