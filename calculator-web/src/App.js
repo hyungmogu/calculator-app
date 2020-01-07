@@ -83,8 +83,6 @@ class App extends Component {
         return null;
       }
 
-      console.log(prevState.currentNumber);
-
       let newCurrentNumber = `${-1 * parseFloat(prevState.currentNumber)}`;
 
       return {
