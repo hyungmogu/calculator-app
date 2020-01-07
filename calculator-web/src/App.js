@@ -67,7 +67,29 @@ class App extends Component {
   }
 
   calculate = () => {
+    this.setState( prevState => {
+      let newNumber;
+      try {
+        newNumber = `${eval(prevState.display)}`;
+      } catch (Error) {
+        return {
+          display: 'Error',
+          lock: true
+        }
+      }
 
+      if (newNumber === 'Infinity') {
+        return {
+          display: newNumber,
+          lock: true
+        }
+      }
+
+      return {
+        display: newNumber,
+        currentNumber: newNumber
+      }
+    });
   }
 
   clear = () => {
