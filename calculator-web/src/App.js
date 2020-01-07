@@ -35,7 +35,9 @@ class App extends Component {
   }
 
   clear = () => {
-
+    this.setState({
+      display: '0'
+    })
   }
 
   toggleSign = () => {
