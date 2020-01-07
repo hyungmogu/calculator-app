@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/calculator-app/calculator-web/static/css/main.a4ec1274.chunk.css",
+    "main.js": "/calculator-app/calculator-web/static/js/main.5793fce7.chunk.js",
+    "main.js.map": "/calculator-app/calculator-web/static/js/main.5793fce7.chunk.js.map",
+    "runtime-main.js": "/calculator-app/calculator-web/static/js/runtime-main.30c54f0a.js",
+    "runtime-main.js.map": "/calculator-app/calculator-web/static/js/runtime-main.30c54f0a.js.map",
+    "static/js/2.e12febda.chunk.js": "/calculator-app/calculator-web/static/js/2.e12febda.chunk.js",
+    "static/js/2.e12febda.chunk.js.map": "/calculator-app/calculator-web/static/js/2.e12febda.chunk.js.map",
+    "index.html": "/calculator-app/calculator-web/index.html",
+    "precache-manifest.f6cf1b3db17a27f19196d13c64d1e137.js": "/calculator-app/calculator-web/precache-manifest.f6cf1b3db17a27f19196d13c64d1e137.js",
+    "service-worker.js": "/calculator-app/calculator-web/service-worker.js",
+    "static/css/main.a4ec1274.chunk.css.map": "/calculator-app/calculator-web/static/css/main.a4ec1274.chunk.css.map",
+    "static/js/2.e12febda.chunk.js.LICENSE": "/calculator-app/calculator-web/static/js/2.e12febda.chunk.js.LICENSE",
+    "static/media/logo.svg": "/calculator-app/calculator-web/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.30c54f0a.js",
+    "static/js/2.e12febda.chunk.js",
+    "static/css/main.a4ec1274.chunk.css",
+    "static/js/main.5793fce7.chunk.js"
+  ]
+}
