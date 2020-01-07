@@ -78,7 +78,20 @@ class App extends Component {
   }
 
   toggleSign = () => {
+    this.setState( prevState => {
+      if (prevState.currentNumber === '0') {
+        return null;
+      }
 
+      console.log(prevState.currentNumber);
+
+      let newCurrentNumber = `${-1 * parseFloat(prevState.currentNumber)}`;
+
+      return {
+        display: prevState.display.replace(/([^\s]+)$/i, newCurrentNumber),
+        currentNumber: newCurrentNumber
+      }
+    });
   }
 
   render() {
