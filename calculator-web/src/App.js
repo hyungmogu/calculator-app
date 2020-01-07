@@ -5,25 +5,39 @@ import './App.css';
 class App extends Component {
 
   state = {
-    display: '0'
+    display: '0',
+    currentNumber: '0'
   }
 
   addDecimal = () => {
+    let decimal = '.';
 
+    this.setState( prevState => {
+      if (prevState.currentNumber.includes(decimal)) {
+        return null;
+      }
+
+      return {
+        display: prevState.display + decimal,
+        currentNumber: prevState.currentNumber + decimal
+      }
+    });
   }
 
   addNumber = (value) => {
     this.setState( prevState => {
       if (prevState.display === '0') {
         return {
-          display: value
+          display: value,
+          currentNumber: value
         }
       }
 
       return {
-        display: prevState.display + value
+        display: prevState.display + value,
+        currentNumber: prevState.display + value
       }
-  });
+    });
   }
 
   addOperator = () => {
@@ -36,7 +50,8 @@ class App extends Component {
 
   clear = () => {
     this.setState({
-      display: '0'
+      display: '0',
+      currentNumber: '0'
     })
   }
 
@@ -68,7 +83,7 @@ class App extends Component {
                   <div className="btn btn--number-3" onClick={ () => this.addNumber('9')}>9</div>
                   <div className="btn btn--operand-product" onClick={ () => this.addOperator('*')}>x</div>
                   <div className="btn btn--sign" onClick={ () => this.toggleSign()}>+/-</div>
-                  <div className="btn btn--decimal" onClick={ () => this.addDecimal('.')}>.</div>
+                  <div className="btn btn--decimal" onClick={ () => this.addDecimal()}>.</div>
                   <div className="btn btn--number-0" onClick={ () => this.addNumber('0')}>0</div>
                   <div className="btn btn--operand-equal" onClick={ () => this.calculate()}>=</div>
               </section>
