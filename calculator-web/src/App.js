@@ -17,6 +17,13 @@ class App extends Component {
         return null;
       }
 
+      if (prevState.display[prevState.display.length - 1].trim() === '') {
+        return {
+          display: prevState.display + '0' + decimal,
+          currentNumber: prevState.currentNumber + decimal
+        }
+      }
+
       return {
         display: prevState.display + decimal,
         currentNumber: prevState.currentNumber + decimal
