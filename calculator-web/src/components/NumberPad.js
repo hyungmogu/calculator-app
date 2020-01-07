@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 import CalculatorButtonsList from '../data/buttons';
 
-
-class ButtonsList extends Component {
+class NumberPad extends Component {
 
     render() {
         let buttons = CalculatorButtonsList.map( button => {
@@ -78,3 +77,5 @@ class ButtonsList extends Component {
         );
     }
 }
+
+export default NumberPad;

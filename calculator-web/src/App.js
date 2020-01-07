@@ -1,162 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import logo from './logo.svg';
 import './App.css';
 
-import CalculatorButtonsList from './data/buttons';
+import NumberPad from './components/NumberPad';
 
-class App extends Component {
-
-  state = {
-    display: '0',
-    currentNumber: '0'
-  }
-
-  handleAddDecimal = () => {
-    let decimal = '.';
-
-    this.setState( prevState => {
-      if (prevState.lock) {
-        return null;
-      }
-
-      if (prevState.currentNumber.includes(decimal)) {
-        return null;
-      }
-
-      if (prevState.display[prevState.display.length - 1].trim() === '') {
-        return {
-          display: prevState.display + '0' + decimal,
-          currentNumber: prevState.currentNumber + decimal
-        }
-      }
-
-      return {
-        display: prevState.display + decimal,
-        currentNumber: prevState.currentNumber + decimal
-      }
-    });
-  }
-
-  handleAddNumber = (value) => {
-    this.setState( prevState => {
-
-      if (prevState.lock) {
-        return null;
-      }
-
-      if (prevState.display === '0') {
-        return {
-          display: value,
-          currentNumber: value
-        }
-      }
-
-      return {
-        display: prevState.display + value,
-        currentNumber: prevState.currentNumber + value
-      }
-    });
-  }
-
-  handleAddOperator = (value) => {
-    this.setState( prevState => {
-      let secondLastDigit = prevState.display[prevState.display.length - 2];
-      let operators = ['+', '-', '/', '*'];
-
-      if (prevState.lock) {
-        return null;
-      }
-
-      if (operators.includes(secondLastDigit)) {
-        return {
-          display: `${prevState.display.slice(0, -3)} ${value} `,
-          currentNumber: '0'
-        }
-      }
-
-      return {
-        display: `${prevState.display} ${value} `,
-        currentNumber: '0'
-      }
-    });
-  }
-
-  handleCalculate = () => {
-    this.setState( prevState => {
-      let newNumber;
-
-      if (prevState.lock) {
-        return null;
-      }
-
-      try {
-        newNumber = `${eval(prevState.display)}`;
-      } catch (Error) {
-        return {
-          display: 'Error',
-          lock: true
-        }
-      }
-
-      if (newNumber === 'Infinity') {
-        return {
-          display: newNumber,
-          lock: true
-        }
-      }
-
-      return {
-        display: newNumber,
-        currentNumber: newNumber
-      }
-    });
-  }
-
-  handleClear = () => {
-    this.setState({
-      display: '0',
-      currentNumber: '0',
-      lock: false
-    })
-  }
-
-  handleToggleSign = () => {
-    this.setState( prevState => {
-
-      if (prevState.lock) {
-        return null;
-      }
-
-      if (prevState.currentNumber === '0') {
-        return null;
-      }
-
-      let newCurrentNumber = `${-1 * parseFloat(prevState.currentNumber)}`;
-
-      return {
-        display: prevState.display.replace(/([^\s]+)$/i, newCurrentNumber),
-        currentNumber: newCurrentNumber
-      }
-    });
-  }
-
-  render() {
-    let display = this.state.display;
-
-    return (
-      <div className="App">
-        <main>
-            <div className="calculator">
-              <section className="display">{display}</section>
-              <section className="number-pad">
-                  {buttons}
-              </section>
-          </div>
-        </main>
+const App = ({display}) => (
+  <div className="App">
+    <main>
+        <div className="calculator">
+          <section className="display">{display}</section>
+          <NumberPad/>
       </div>
-    );
-  }
-}
+    </main>
+  </div>
+);
+
 
 export default App;
