@@ -2,13 +2,14 @@ import React from 'react';
 
 import './App.css';
 
+import Display from './components/Display';
 import NumberPad from './components/NumberPad';
 
 const App = ({display}) => (
   <div className="App">
     <main>
         <div className="calculator">
-          <section className="display">{display}</section>
+          <Display/>
           <NumberPad/>
       </div>
     </main>
