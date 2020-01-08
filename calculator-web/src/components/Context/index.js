@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 const CalculatorContext = React.createContext();
 
@@ -145,7 +145,7 @@ export class Provider extends Component {
                     display: this.state.display,
                     currentNumber: this.state.currentNumber,
                     lock: this.state.lock,
-                    action: {
+                    actions: {
                         addOperator: this.handleAddOperator,
                         addDecimal: this.handleAddDecimal,
                         toggleSign: this.handleToggleSign,
